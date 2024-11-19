@@ -13,9 +13,34 @@ public class CheckGuest {
         String guestName = input.nextLine();
         input.close();
         //*Creo un ciclo for per verificare se il nome inserito si trova nella guests list */
+        //* inizializzo un ciclo for che iteri per ogni elemento dell'array */
+        //* ad ogni iterazione, verifica se la parola inserita è uguale all'elemento */
+        //* se guestName guests[i] se corretta  */
+        
+        boolean isFound = false;
+
+        int counter = -1;
+
+
+
+        for(String currentElement : guests){
+            counter++;
+            if (currentElement.equalsIgnoreCase(guestName)) {
+                isFound = true;
+                
+                break;
+            }
+        }
+
+        if (isFound) {
+            System.out.println("puoi entrare " + counter);
+        }else{
+            System.out.println("non puoi entrare");
+        }
+
 
 
     }
-        
+    
 
 }
